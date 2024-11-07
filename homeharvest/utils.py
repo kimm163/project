@@ -61,7 +61,8 @@ ordered_properties = [
     "office_phones",
     "nearby_schools",
     "primary_photo",
-    "alt_photos",
+    "alt_photos"
+    "tax_history",
 ]
 
 
@@ -127,6 +128,7 @@ def process_result(result: Property) -> pd.DataFrame:
         prop_data["parking_garage"] = description.garage
         prop_data["stories"] = description.stories
         prop_data["text"] = description.text
+        prop_data["tax_history"]= description.tax_history
 
     properties_df = pd.DataFrame([prop_data])
     properties_df = properties_df.reindex(columns=ordered_properties)
